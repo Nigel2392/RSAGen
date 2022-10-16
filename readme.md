@@ -5,7 +5,7 @@
 * RSAGen.exe -bits int
   * *Number of bits for the keypair (default 2048)*
 * RSAGen.exe -generate
-        *Generate a new keypair*
+  * *Generate a new keypair*
 * RSAGen.exe -privkey string
   * *Private key file*
 
