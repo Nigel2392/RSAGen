@@ -2,12 +2,12 @@
 
 **Usage:**
 
-  RSAGen.exe -bits int
-        *Number of bits for the keypair (default 2048)*
-  RSAGen.exe -generate
+* RSAGen.exe -bits int
+  * *Number of bits for the keypair (default 2048)*
+* RSAGen.exe -generate
         *Generate a new keypair*
-  RSAGen.exe -privkey string
-        *Private key file*
+* RSAGen.exe -privkey string
+  * *Private key file*
 
 **About:**
   This program is a simple RSA keypair generator.
