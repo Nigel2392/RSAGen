@@ -7,7 +7,6 @@ import (
 	"encoding/pem"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"github.com/TwiN/go-color"
@@ -18,7 +17,7 @@ func ExpPriv_PEM(key *rsa.PrivateKey, filename string) error {
 	if err != nil {
 		return err
 	}
-	err = ioutil.WriteFile(filename, pem.EncodeToMemory(&pem.Block{Type: "PRIVATE KEY", Bytes: block}), 0644)
+	err = os.WriteFile(filename, pem.EncodeToMemory(&pem.Block{Type: "PRIVATE KEY", Bytes: block}), 0644)
 	if err != nil {
 		return err
 	}
@@ -30,7 +29,7 @@ func ExpPub_PEM(key *rsa.PublicKey, filename string) error {
 	if err != nil {
 		return err
 	}
-	err = ioutil.WriteFile(filename, pem.EncodeToMemory(&pem.Block{Type: "PUBLIC KEY", Bytes: block}), 0644)
+	err = os.WriteFile(filename, pem.EncodeToMemory(&pem.Block{Type: "PUBLIC KEY", Bytes: block}), 0644)
 	if err != nil {
 		return err
 	}
@@ -46,7 +45,7 @@ func GenKeyPair(bits int) (*rsa.PrivateKey, *rsa.PublicKey, error) {
 }
 
 func ImpPrivKeyfilePEM(filename string) (*rsa.PrivateKey, error) {
-	keyFile, err := ioutil.ReadFile(filename)
+	keyFile, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}
