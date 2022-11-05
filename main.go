@@ -87,7 +87,7 @@ Usage:
 	Public key file name (default PUBKEY.pem)
 ` + color.Colorize(color.Blue, "  RSAGen.exe -obf bool (optional -len)") + `
 	Generate obfuscated keypair as golang code.
-	-len is the length of the obfuscated key (default 32)`
+	-len is the length of the obfuscated key groupings (default 32)`
 
 	fmt.Println(color.Colorize(color.Purple, str))
 }
