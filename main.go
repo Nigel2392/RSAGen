@@ -116,12 +116,20 @@ func main() {
 	bits := flag.Int("bits", 2048, "Number of bits for the keypair")
 	privkeyfile := flag.String("privkey", "", "Private key file")
 	extra_info := flag.Bool("info", false, "Extra info")
+	obf_info := flag.Bool("obf", false, "Obfuscate key into a go file")
+	obf_len := flag.Int("len", 32, "Length of the obfuscated key")
 
 	flag.Parse()
 
 	if *generate {
 		privkey, pubkey, err := GenKeyPair(*bits)
 		PrintErr(err)
+		if *obf_info {
+			err := Obfuscate_PrivKey(privkey, *obf_len)
+			PrintErr(err)
+			err = Obfuscate_PubKey(pubkey, *obf_len)
+			PrintErr(err)
+		}
 		err = ExpPriv_PEM(privkey, *privkey_fname)
 		PrintErr(err)
 		err = ExpPub_PEM(pubkey, *pubkey_fname)
