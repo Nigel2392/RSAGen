@@ -84,7 +84,11 @@ Usage:
 ` + color.Colorize(color.Blue, "  RSAGen.exe -privkey string") + `
 	Private key file name (default "PRIVKEY.pem")
 ` + color.Colorize(color.Blue, "  RSAGen.exe -privkey string") + `
-	Public key file name (default PUBKEY.pem)`
+	Public key file name (default PUBKEY.pem)
+` + color.Colorize(color.Blue, "  RSAGen.exe -obf bool (optional -len)") + `
+	Generate obfuscated keypair as golang code.
+	-len is the length of the obfuscated key (default 32)`
+
 	fmt.Println(color.Colorize(color.Purple, str))
 }
 
